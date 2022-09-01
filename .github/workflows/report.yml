@@ -14,6 +14,9 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: '12.x'
+      - name: Cypress install
+        run: |
+          npm install cypress
       - name: Cypress Report
         run: npx cypress run --browser chrome
   nodechecker:
