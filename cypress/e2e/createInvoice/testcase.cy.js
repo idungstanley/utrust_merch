@@ -31,6 +31,5 @@ describe("Create Invoice", () => {
     cy.select_country(data.country)
     cy.select_currency(data.currency)
     handle.enter_amount(5000)
-    handle.enter_desc(data.desc)
   })
 });

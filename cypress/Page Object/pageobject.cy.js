@@ -51,7 +51,7 @@ export default class Utrust{
         return cy.get("#amount").type(`${amount}{enter}`)
     }
     enter_desc(desc){
-        return cy.get("#description").type(`${desc}{enter}`)
+        return cy.get("#description").type(desc)
     }
     submit_invoice(){
         return cy.get("generate-invoice-button").click()
