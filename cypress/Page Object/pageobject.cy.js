@@ -2,8 +2,23 @@ class Utrust{
     navigate(){
         return cy.visit("https://merchants.sandbox-utrust.com")
     }
+    signin_email(email){
+        return cy.get("#email").type(email)
+    }
+    signin_password(password){
+        return cy.get("#password").type(password)
+    }
+    click_signin(){
+        return cy.get("#progress-status").click()
+    }
     click_payment(){
         return cy.get("ul[role='menubar'] li[role='menuitem'] a[href='/payments/orders']").click()
+    }
+    click_invoice(){
+        return cy.get("div.Tabs_root__iWf1A h3:nth-child(2)").click()
+    }
+    add_newInvoice(){
+        return cy.get("div .Payments_newInvoiceDesktop__oV8L2 button[name='button']").click()
     }
     enter_name(name){
         return cy.get(".TextBox_inputWrapper__AOiC8 input[name='customerName']").type(name,{enter})
