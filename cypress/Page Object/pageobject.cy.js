@@ -53,4 +53,17 @@ class Utrust{
     submit_invoice(){
         return cy.get("generate-invoice-button").click()
     }
+    cancel_invoice(){
+        return cy.get(".NewInvoiceConfirmationModal_buttons__1O-c9 button:nth-child(1)").click()
+    }
+    confirm_invoice_btn(){
+        return cy.get(".NewInvoiceConfirmationModal_buttons__1O-c9 button[data-test='submit-new-invoice-button']").click()
+        
+    }
+
+    confirm_success(){
+        cy.get("button[data-test='invoice-sent-ok']")
+        cy.get(".InvoiceSentModal_root__1jglp span[css='1'] p")
+        return cy.get(".InvoiceSentModal_root__1jglp h3")
+    }
 }
