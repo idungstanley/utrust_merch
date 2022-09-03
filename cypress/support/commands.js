@@ -10,6 +10,7 @@
 //
 //
 // -- This is a parent command --
+import 'cypress-mailosaur'
 Cypress.Commands.add('select_country', (countryName) => {
     cy.get('#downshift-5-input').clear()
     cy.get('#downshift-5-input').type(countryName)
@@ -34,6 +35,14 @@ Cypress.Commands.add('select_currency', (currency) => {
         }
     })
 })
+
+Cypress.Commands.add('copy_and_visit', (selector) => { 
+    let contentText;
+    cy.get(selector).then((link)=>{
+        contentText = link.text()
+        cy.visit(contentText)
+    })
+ })
 // Cypress.Commands.add('login', (email, password) => { ... })
 //
 //
