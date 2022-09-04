@@ -29,11 +29,12 @@ To run a local copy of this project follow these simple steps.
 
 ### Cloning the repository
 
+```
 - Create a new folder.
 - Open your console in the new folder and run this command: `git clone https://github.com/idungstanley/utrust_merch.git`.
 - Run this command on your terminal to install all the dependencies: `npm i`.
 - Finally, run this command to start a local server of the project: `npx cypress open`.
-
+```
 ## Authors
 
 👤 **Stanley (Idung) Sunday**
