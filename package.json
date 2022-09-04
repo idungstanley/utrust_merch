@@ -5,6 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "npm install",
+    "build": "npm run build",
+    "start": "npm start",
     "e2e": "cypress run",
     "e2e:chrome": "cypress run --browser chrome",
     "e2e:record": "cypress run --record",
