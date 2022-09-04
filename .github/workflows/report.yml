@@ -8,16 +8,13 @@ env:
 jobs:
   Headless:
     name: Cypress_run
-    runs-on: ubuntu-18.04
+    cypress-run:
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
-        with:
-          node-version: '12.x'
-      - name: Cypress install
-        run: |
-          npm install cypress
-      - name: Cypress Report
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Cypress run
+        uses: cypress-io/github-action@v4
         with:
           build: npm run build
           start: npm start
@@ -25,7 +22,6 @@ jobs:
         env: 
           CYPRESS_RECORD_KEY: ${{secrets.CYPRESS_RECORD_KEY}}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN}}  
-        run: npx cypress run --browser chrome
       
   nodechecker:
     name: node_modules checker
