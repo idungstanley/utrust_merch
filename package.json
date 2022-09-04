@@ -4,7 +4,7 @@
   "description": "This project is built with the purpose of automating the payment process integration with Utrust there by allowing user to pay with cryptocurrencies",
   "main": "index.js",
   "scripts": {
-    "test": "npm install",
+    "test": "cypress open",
     "build": "",
     "start": "",
     "e2e": "cypress run",

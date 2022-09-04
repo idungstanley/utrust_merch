@@ -61,5 +61,7 @@ describe("Create Invoice", {browser:"electron"},() => {
     handle.copy_link()
     cy.viewport('iphone-xr')
     cy.copy_and_visit(data.payment_selector)
+    handle.validate_amount(data.amount)
+    handle.validate_store_name(data.store)
   })
 });

@@ -1,18 +1,25 @@
+/// <reference types="cypress"/>
 export default class Utrust {
   navigate() {
     return cy.visit("https://merchants.sandbox-utrust.com");
   }
   signin_email(email) {
-    return cy.get("#email").type(email);
+    cy.get("#email").clear();
+    cy.get("#email").type(email);
+    return this;
   }
   signin_password(password) {
-    return cy.get("#password").type(password);
+    cy.get("#password").clear();
+    cy.get("#password").type(password);
+    return this;
   }
   click_signin() {
     return cy.get("#progress-status").click();
   }
   click_menu() {
-    return cy.get(".Sidebar_navButton__2cTfR > .Icon_auto__WB6i_ > svg").click;
+    return cy
+      .get(".Sidebar_navButton__2cTfR > .Icon_auto__WB6i_ > svg")
+      .click({ force: true });
   }
   click_payment() {
     return cy
@@ -28,48 +35,66 @@ export default class Utrust {
       .click({ force: true });
   }
   enter_name(name) {
-    return cy
-      .get(".TextBox_inputWrapper__AOiC8 input[name='customerName']")
-      .type(`${name}{enter}`);
+    cy.get(".TextBox_inputWrapper__AOiC8 input[name='customerName']").clear();
+    cy.get(".TextBox_inputWrapper__AOiC8 input[name='customerName']").type(
+      `${name}{enter}`
+    );
+    return this;
   }
   enter_email(email) {
-    return cy
-      .get(".TextBox_inputWrapper__AOiC8 input[name='customerEmail']")
-      .type(`${email}{enter}`);
+    cy.get(".TextBox_inputWrapper__AOiC8 input[name='customerEmail']").clear();
+    cy.get(".TextBox_inputWrapper__AOiC8 input[name='customerEmail']").type(
+      `${email}{enter}`
+    );
+    return this;
   }
   send_invoice() {
     return cy.get("label input[name='sendIssuedEmail']").should("be.checked");
   }
   billing_address(address) {
-    return cy
-      .get("div.TextBox_inputWrapper__AOiC8 input[name='billingAddress']")
-      .type(`${address}{enter}`);
+    cy.get(
+      "div.TextBox_inputWrapper__AOiC8 input[name='billingAddress']"
+    ).clear();
+    cy.get("div.TextBox_inputWrapper__AOiC8 input[name='billingAddress']").type(
+      `${address}{enter}`
+    );
+    return this;
   }
   enter_city(city) {
-    return cy
-      .get("div.TextBox_inputWrapper__AOiC8 input[name='city']")
-      .type(`${city}{enter}`);
+    cy.get("div.TextBox_inputWrapper__AOiC8 input[name='city']").clear();
+    cy.get("div.TextBox_inputWrapper__AOiC8 input[name='city']").type(
+      `${city}{enter}`
+    );
+    return this;
   }
   enter_post_code(postcode) {
-    return cy
-      .get("div.TextBox_inputWrapper__AOiC8 input[name='postCode']")
-      .type(`${postcode}{enter}`);
+    cy.get("div.TextBox_inputWrapper__AOiC8 input[name='postCode']").clear();
+    cy.get("div.TextBox_inputWrapper__AOiC8 input[name='postCode']").type(
+      `${postcode}{enter}`
+    );
+    return this;
   }
   enter_country(country) {
-    return cy
-      .get(
-        "div.SearchableInput_root__2ezYN input[name='dropdown-input-country']"
-      )
-      .type(country);
+    cy.get(
+      "div.SearchableInput_root__2ezYN input[name='dropdown-input-country']"
+    ).clear();
+    cy.get(
+      "div.SearchableInput_root__2ezYN input[name='dropdown-input-country']"
+    ).type(country);
+    return this;
   }
   select_currency() {
     return cy.get("#downshift-4-input");
   }
   enter_amount(amount) {
-    return cy.get("#amount").type(amount);
+    cy.get("#amount").clear();
+    cy.get("#amount").type(amount);
+    return this;
   }
   enter_desc(desc) {
-    return cy.get("#description").type(desc);
+    cy.get("#description").clear();
+    cy.get("#description").type(desc);
+    return this;
   }
   submit_invoice() {
     return cy.get("#generate-invoice-button").click({ force: true });
@@ -96,5 +121,20 @@ export default class Utrust {
     return cy
       .get(".CodeDisplay_displayWrapper__3LSdR .CodeDisplay_isButton__B8CtY")
       .click();
+  }
+  logout(){
+    return cy.get(".Sidebar_signOutWrapper__2QOPL div a[href='/sign-out']").click()
+  }
+  validate_amount(amount){
+    return cy.get(".Details_total__2yYcA .Details_fiat__2oK6C").should("contain", amount)
+  }
+  validate_total_amount(amount){
+    return cy.get(".Details_column__3cWJk .Details_totalFiat__1Dk90").should("contain", amount)
+  }
+  validate_desc(desc){
+    return cy.get(".List_root__3LLI7 div").should("contain", desc)
+  }
+  validate_store_name(store){
+    return cy.get(".Details_inline__1DFay .Details_storeName__3iENh").should("contain", store)
   }
 }
