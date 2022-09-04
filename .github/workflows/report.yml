@@ -18,7 +18,15 @@ jobs:
         run: |
           npm install cypress
       - name: Cypress Report
-        run: npx cypress run --browser chrome
+        uses: cypress-io/github-actions@v2
+        with:
+          build: npm run build
+          start: npm start
+          record: true
+        env: 
+          CYPRESS_RECORD_KEY: ${{secrets.CYPRESS_RECORD_KEY}}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN}}  
+      
   nodechecker:
     name: node_modules checker
     runs-on: ubuntu-18.04
