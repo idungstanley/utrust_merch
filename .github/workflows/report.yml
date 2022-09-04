@@ -8,7 +8,6 @@ env:
 jobs:
   Headless:
     name: Cypress_run
-    cypress-run:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
