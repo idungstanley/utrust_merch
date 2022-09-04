@@ -1,12 +1,17 @@
 {
   "name": "utrust_merch",
   "version": "1.0.0",
-  "description": "",
+  "description": "This project is built with the purpose of automating the payment process integration with Utrust there by allowing user to pay with cryptocurrencies",
   "main": "index.js",
   "scripts": {
     "test": "npm install",
-    "build": "",
-    "start": ""
+    "e2e": "cypress run",
+    "e2e:chrome": "cypress run --browser chrome",
+    "e2e:record": "cypress run --record",
+    "e2e:record:chrome": "cypress run --record --browser chrome",
+    "e2e:record:edge": "cypress run --record --browser edge",
+    "e2e:record:firefox": "cypress run --record --browser firefox",
+    "e2e:record:parallel": "cypress run --record --parallel"
   },
   "repository": {
     "type": "git",
