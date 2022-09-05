@@ -35,6 +35,7 @@ To run a local copy of this project follow these simple steps.
 
 - We want to run this scenario automatically and frequently. What process/setup/tools would you choose to achieve this?
    - I chose cypress as a tool to automate the process, the setup is referenced above and I also used GitHub workflows for continuous integration of the test, which allows and ensure teams receive immediate feedback to quickly mitigate as many risks as possible throughout the software development lifecycle.
+     
 
 - How would you check if the email was really received to the email address? 
    - I utilize a software called Mailosaur, which provides an automated email testing service that uses virtual SMTP server, which lets you avoid managing a real server, or worse, sending untested emails to your customers. So i was able to utilize this service thereby testing if the mail was successfully sent to the provided emailAddress.

@@ -142,8 +142,7 @@ export default class Utrust {
   }
 
   validate_invoice_success() {
-    return cy
-      .get("cy.get('.InvoiceSentModal_root__1jglp > .Text_root__1Ipb5 > :nth-child(1)')")
+    return cy.get('.InvoiceSentModal_root__1jglp > .Text_root__1Ipb5 > :nth-child(1)')
       .should("contain", "The invoice is on its way");
   }
 
