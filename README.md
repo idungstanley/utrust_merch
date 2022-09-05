@@ -1,5 +1,5 @@
 ![](https://img.shields.io/badge/Utrust-merchants-blueviolet)
-# utrust_merch
+# Utrust Merchant
 
 ---
 
@@ -11,7 +11,6 @@
 - Cucumber
 - Cypress Dashboard
 ---
-
 ---
 
 ## Getting Started
@@ -31,7 +30,7 @@ To run a local copy of this project follow these simple steps.
 - Run this command on your terminal to install all the dependencies: `npm install`.
 - Finally, run this command to start a local server of the project: `npm run test`.
 
-### Questions and Answers
+### Decisions made during Implementation
 
 - We want to run this scenario automatically and frequently. What process/setup/tools would you choose to achieve this?
    - I chose Cypress as a tool to automate the process. The setup is referenced above.
@@ -43,7 +42,7 @@ To run a local copy of this project follow these simple steps.
       - Click on the latest workflow
       - Click on cypress run
       - Scroll to the end, you will the Recorded run 
-      - Click on the linnk to view results
+      - Click on the link to view results
 
 - How would you check if the email was really received to the email address? 
    - I utilize a service mailing tool called Mailosaur, which provides an automated email testing service that uses a virtual SMTP server. This tool lets you avoid managing a real server or, worse, sending untested emails to your customers. So I was able to utilize this service, thereby testing if the mail was successfully sent to the provided email address.
