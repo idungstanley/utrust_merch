@@ -21,16 +21,15 @@ To run a local copy of this project follow these simple steps.
 ### Prerequisites
 
 - Any Code Editor (e.g. Vscode)
+- Installed Node.js
 
-### Cloning the repository
+### Local Setup
 
-```
 - Create a new folder.
 - Open your console in the new folder and run this command: 
 `git clone https://github.com/idungstanley/utrust_merch.git`.
-- Run this command on your terminal to install all the dependencies: `npm i`.
-- Finally, run this command to start a local server of the project: `npx cypress open`.
-```
+- Run this command on your terminal to install all the dependencies: `npm install`.
+- Finally, run this command to start a local server of the project: `npm run test`.
 
 ### Questions and Answers
 
