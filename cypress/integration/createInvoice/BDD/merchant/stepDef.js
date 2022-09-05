@@ -33,17 +33,13 @@ And("I fill the inputs and generate Invoice", function(){
   handle.enter_post_code(this.data.postal_code);
   cy.select_country(this.data.country);
   cy.select_currency(this.data.currency);
-  cy.pause();
   handle.enter_amount(5000);
   handle.enter_desc(this.data.desc);
   cy.wait(1000);
-  cy.pause();
   handle.submit_invoice();
-  cy.pause();
   handle.confirm_invoice_btn();
   cy.contains("Invoice sent")
   handle.validate_invoice_success()
-  cy.pause();
   handle.confirm_success();
   handle.validate_email(serviceId, emailAddress)
 });

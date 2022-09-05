@@ -34,14 +34,25 @@ To run a local copy of this project follow these simple steps.
 ### Questions and Answers
 
 - We want to run this scenario automatically and frequently. What process/setup/tools would you choose to achieve this?
-   - I chose cypress as a tool to automate the process, the setup is referenced above and I also used GitHub workflows for continuous integration of the test, which allows and ensure teams receive immediate feedback to quickly mitigate as many risks as possible throughout the software development lifecycle.
-     
+   - I chose Cypress as a tool to automate the process. The setup is referenced above.
+   - I used GitHub workflows for continuous integration of the test, which allows and ensures teams receive immediate feedback to quickly mitigate as many risks as possible throughout the software development lifecycle. On every push I make, the process is handled automatically and the result is displayed on the Git actions where the jobs are being run.
+   - I used Cucumber because it allows test cases to be written in simple feature files which are easily understood by managers, non-technical stakeholders, and business analysts.
+   - All results can be viewed in the Cypress dashboard, which has been setup for this project. Steps to view the result
+      - Navigate to `https://github.com/idungstanley/utrust_merch`
+      - Click on Actions
+      - Click on the latest workflow
+      - Click on cypress run
+      - Scroll to the end, you will the Recorded run 
+      - Click on the linnk to view results
 
 - How would you check if the email was really received to the email address? 
-   - I utilize a software called Mailosaur, which provides an automated email testing service that uses virtual SMTP server, which lets you avoid managing a real server, or worse, sending untested emails to your customers. So i was able to utilize this service thereby testing if the mail was successfully sent to the provided emailAddress.
+   - I utilize a service mailing tool called Mailosaur, which provides an automated email testing service that uses a virtual SMTP server. This tool lets you avoid managing a real server or, worse, sending untested emails to your customers. So I was able to utilize this service, thereby testing if the mail was successfully sent to the provided email address.
+      - I logged the email subject to the console
+      - Assert that the email subject received is the same with the one sent by the system
+    
 
 - How would you test the same scenario on different screen sizes?
-   - I will test the scenario on different screen sizes using the inbuilt cypress command which is the cy.viewport(width,height), so this command when placed above the test to be executed, it handles the sizes based on the width and height provided, it also has built in screen sizes for mac and iphones for mobile. This was also used in the test cases 
+   - I will test the scenario on different screen sizes using the inbuilt Cypress command, which is the cy.viewport(width,height). So this command, when placed above the test to be executed, handles the sizes based on the width, height provided and it also accepts strings. It also has built-in screen sizes for Mac and iPhones for mobile. This was also used in the test above. 
 ## Authors
 
 👤 **Stanley (Idung) Sunday**

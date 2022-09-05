@@ -134,6 +134,7 @@ export default class Utrust {
       sentTo: emailAddress,
     }).then((email) => {
       cy.log(email.subject);
+      expect(email.subject).to.equal('Invoice to pay from Demo store')
     });
   }
 
