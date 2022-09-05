@@ -1,0 +1,14 @@
+{
+  "name": "Stanley Sunday",
+  "email": "sundaystanley56@gmail.com",
+  "billing_address": "adetaku east london",
+  "city": "Lagos",
+  "postal_code": "129403",
+  "country": "Nigeria",
+  "password":"45826966Bf.",
+  "desc":"Testing",
+  "amount": 500,
+  "store": "Demo store",
+  "currency":"USD",
+  "payment_selector": "button .CodeDisplay_text__3U3UO"
+}
