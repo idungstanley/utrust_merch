@@ -8,7 +8,7 @@ module.exports = defineConfig({
     MAILOSAUR_API_KEY: "Dg3SdviYEjt68D6W",
   },
   e2e: {
-    specPattern: "cypress/integration/createInvoice/BDD/*.feature",
+    specPattern: "cypress/integration/*.feature",
     setupNodeEvents(on, config) {
       on("file:preprocessor", cucumber());
       // implement node event listeners here
