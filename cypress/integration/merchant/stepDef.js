@@ -28,7 +28,7 @@ And("I fill the inputs and generate Invoice", function(){
   handle.enter_name(this.data.name);
   handle.enter_email(emailAddress);
   handle.send_invoice();
-  handle.billing_address(this.data.address);
+  handle.billing_address(this.data.billing_address);
   handle.enter_city(this.data.city);
   handle.enter_post_code(this.data.postal_code);
   cy.select_country(this.data.country);
