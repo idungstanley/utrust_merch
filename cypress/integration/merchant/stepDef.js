@@ -1,6 +1,6 @@
 /// <reference types="cypress"/>
 import { Given, When, Then, And } from "cypress-cucumber-preprocessor/steps";
-import Utrust from "../../Page Object/pageobject.cy";
+import Utrust from "../../pageObject/pageobject.cy";
 
 const serviceId = "sprmwosd";
 const serviceDomain = "sprmwosd.mailosaur.net";
