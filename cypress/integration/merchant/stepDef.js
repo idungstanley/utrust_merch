@@ -17,9 +17,7 @@ Given("I Signin to Utrust merchant payment dashboard", function() {
 When("I select new invoice", () => {
   handle.click_menu();
   handle.click_payment();
-  cy.wait(2000);
   handle.click_invoice();
-  cy.wait(2000);
   handle.add_newInvoice();
 });
 
@@ -35,7 +33,6 @@ And("I fill the inputs and generate Invoice", function(){
   cy.select_currency(this.data.currency);
   handle.enter_amount(5000);
   handle.enter_desc(this.data.desc);
-  cy.wait(1000);
   handle.submit_invoice();
   handle.confirm_invoice_btn();
   cy.contains("Invoice sent")
@@ -47,7 +44,6 @@ And("I fill the inputs and generate Invoice", function(){
 Then("I open the payment link and check if the values are correct", function(){
   cy.viewport("iphone-xr");
   cy.copy_and_visit(this.data.payment_selector);
-  cy.wait(1000)
   handle.select_details()
   handle.validate_desc(this.data.desc)
   handle.validate_amount(this.data.amount);
